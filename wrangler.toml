@@ -1,0 +1,18 @@
+name = "nodewarden-mcp"
+main = "src/index.ts"
+compatibility_date = "2025-03-10"
+compatibility_flags = ["nodejs_compat"]
+
+# Custom domain is managed via Cloudflare API/Dashboard, not wrangler routes
+# Domain: mcp.312522.xyz -> nodewarden-mcp worker
+
+[[kv_namespaces]]
+binding = "KV"
+id = "ca77b467d92148dda231c9316ffe42fd"
+
+[vars]
+NODEWARDEN_URL = "https://pw.312522.xyz"
+USER_EMAIL = "niulu114514@gmail.com"
+# Whether delete_item moves to recycle bin ("true") or permanently deletes ("false").
+# Default: "true" (soft delete / recycle bin)
+SOFT_DELETE = "true"
